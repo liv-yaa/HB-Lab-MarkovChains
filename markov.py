@@ -87,7 +87,10 @@ def make_text(chains):
             random_item = choice(chains[next_tuple])
             #print(next_tuple, random_item)
 
+            words.append(value1)
+            words.append(value2)
             words.append(random_item)
+
 
         
     return " ".join(words)
