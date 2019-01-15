@@ -64,7 +64,7 @@ def make_chains(text_string):
             new_list = [third_word]
             chains[word_tuple] = new_list
 
-    print(chains)
+    # print(chains)
     return chains
 
 
@@ -74,7 +74,22 @@ def make_text(chains):
     words = []
 
     # your code goes here
+    for key in chains:
+        value1 = key[1]
+        values_list = chains[key]
+        value2 = choice(values_list)
+        
+        next_tuple = tuple([value1, value2])
+        # print(next_tuple)
 
+        if next_tuple in chains:
+
+            random_item = choice(chains[next_tuple])
+            #print(next_tuple, random_item)
+
+            words.append(random_item)
+
+        
     return " ".join(words)
 
 
@@ -89,38 +104,38 @@ chains = make_chains(input_text)
 # Produce random text
 random_text = make_text(chains)
 
-# print(random_text)
+print(random_text)
 
 
 
 
 
-## SHH
-test_dict = {('a', 'fox?'): ['Would'],
- ('Sam', 'I'): ['am?'],
- ('could', 'you'): ['in', 'with', 'in', 'with'],
- ('you', 'with'): ['a', 'a'],
- ('box?', 'Would'): ['you'],
- ('ham?', 'Would'): ['you'],
- ('you', 'in'): ['a', 'a'],
- ('a', 'house?'): ['Would'],
- ('like', 'green'): ['eggs'],
- ('like', 'them,'): ['Sam'],
- ('and', 'ham?'): ['Would'],
- ('Would', 'you'): ['could', 'could', 'could', 'could', 'like', 'like'],
- ('you', 'could'): ['you', 'you', 'you', 'you'],
- ('a', 'mouse?'): ['Would'],
- ('them,', 'Sam'): ['I'],
- ('in', 'a'): ['house?', 'box?'],
- ('with', 'a'): ['mouse?', 'fox?'],
- ('house?', 'Would'): ['you'],
- ('a', 'box?'): ['Would'],
- ('green', 'eggs'): ['and'],
- ('you', 'like'): ['green', 'them,'],
- ('mouse?', 'Would'): ['you'],
- ('fox?', 'Would'): ['you'],
- ('eggs', 'and'): ['ham?']
-}
+# ## SHH
+# test_dict = {('a', 'fox?'): ['Would'],
+#  ('Sam', 'I'): ['am?'],
+#  ('could', 'you'): ['in', 'with', 'in', 'with'],
+#  ('you', 'with'): ['a', 'a'],
+#  ('box?', 'Would'): ['you'],
+#  ('ham?', 'Would'): ['you'],
+#  ('you', 'in'): ['a', 'a'],
+#  ('a', 'house?'): ['Would'],
+#  ('like', 'green'): ['eggs'],
+#  ('like', 'them,'): ['Sam'],
+#  ('and', 'ham?'): ['Would'],
+#  ('Would', 'you'): ['could', 'could', 'could', 'could', 'like', 'like'],
+#  ('you', 'could'): ['you', 'you', 'you', 'you'],
+#  ('a', 'mouse?'): ['Would'],
+#  ('them,', 'Sam'): ['I'],
+#  ('in', 'a'): ['house?', 'box?'],
+#  ('with', 'a'): ['mouse?', 'fox?'],
+#  ('house?', 'Would'): ['you'],
+#  ('a', 'box?'): ['Would'],
+#  ('green', 'eggs'): ['and'],
+#  ('you', 'like'): ['green', 'them,'],
+#  ('mouse?', 'Would'): ['you'],
+#  ('fox?', 'Would'): ['you'],
+#  ('eggs', 'and'): ['ham?']
+# }
 
-print(len(test_dict))
-print(len(chains))
+# print(len(test_dict))
+# print(len(chains))
