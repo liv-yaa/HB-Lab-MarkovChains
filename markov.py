@@ -13,7 +13,8 @@ def open_and_read_file(file_path):
     # your code goes here
     text_file = open(file_path)
     text = text_file.read()
-    print(text)
+    # print(type(text))
+    # print(text)
 
     return text
 
@@ -46,7 +47,24 @@ def make_chains(text_string):
     chains = {}
 
     # your code goes here
+    words = text_string.split()
 
+    for index in range(len(words) - 2):
+        word_tuple = tuple(words[index:index + 2])
+
+        third_word = words[index + 2]
+
+        if word_tuple in chains:
+            # Get a list
+            values_list = chains[word_tuple]
+            values_list.append(third_word)
+
+        else:
+            # Make a new list
+            new_list = [third_word]
+            chains[word_tuple] = new_list
+
+    print(chains)
     return chains
 
 
@@ -71,4 +89,4 @@ chains = make_chains(input_text)
 # Produce random text
 random_text = make_text(chains)
 
-print(random_text)
+# print(random_text)
