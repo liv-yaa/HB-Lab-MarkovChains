@@ -90,3 +90,37 @@ chains = make_chains(input_text)
 random_text = make_text(chains)
 
 # print(random_text)
+
+
+
+
+
+## SHH
+test_dict = {('a', 'fox?'): ['Would'],
+ ('Sam', 'I'): ['am?'],
+ ('could', 'you'): ['in', 'with', 'in', 'with'],
+ ('you', 'with'): ['a', 'a'],
+ ('box?', 'Would'): ['you'],
+ ('ham?', 'Would'): ['you'],
+ ('you', 'in'): ['a', 'a'],
+ ('a', 'house?'): ['Would'],
+ ('like', 'green'): ['eggs'],
+ ('like', 'them,'): ['Sam'],
+ ('and', 'ham?'): ['Would'],
+ ('Would', 'you'): ['could', 'could', 'could', 'could', 'like', 'like'],
+ ('you', 'could'): ['you', 'you', 'you', 'you'],
+ ('a', 'mouse?'): ['Would'],
+ ('them,', 'Sam'): ['I'],
+ ('in', 'a'): ['house?', 'box?'],
+ ('with', 'a'): ['mouse?', 'fox?'],
+ ('house?', 'Would'): ['you'],
+ ('a', 'box?'): ['Would'],
+ ('green', 'eggs'): ['and'],
+ ('you', 'like'): ['green', 'them,'],
+ ('mouse?', 'Would'): ['you'],
+ ('fox?', 'Would'): ['you'],
+ ('eggs', 'and'): ['ham?']
+}
+
+print(len(test_dict))
+print(len(chains))
