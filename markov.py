@@ -75,6 +75,7 @@ def make_text(chains):
 
     # your code goes here
     for key in chains:
+        word1 = key[0]
         value1 = key[1]
         values_list = chains[key]
         value2 = choice(values_list)
@@ -87,6 +88,7 @@ def make_text(chains):
             random_item = choice(chains[next_tuple])
             #print(next_tuple, random_item)
 
+            words.append(word1)
             words.append(value1)
             words.append(value2)
             words.append(random_item)
@@ -97,6 +99,8 @@ def make_text(chains):
 
 
 input_path = "green-eggs.txt"
+
+# input_path = "gettysburg.txt"
 
 # Open the file and turn it into one long string
 input_text = open_and_read_file(input_path)
