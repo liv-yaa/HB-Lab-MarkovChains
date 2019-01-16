@@ -75,7 +75,7 @@ def make_text(chains):
     """Return text from chains."""
 
     words = []
-    punctuation = "!.,;:<>?()|/~"
+    punctuation = "!.,?()"
 
     tuple_key = list(chains.keys())[0]
     value0 = tuple_key[0]
@@ -89,6 +89,7 @@ def make_text(chains):
         value2 = choice(chains[tuple_key])
 
         if value2[-1] in punctuation:
+            words.append(value2)
             break
 
         else:
