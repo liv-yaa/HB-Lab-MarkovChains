@@ -2,6 +2,8 @@
 
 from random import choice
 
+import sys
+
 
 def open_and_read_file(file_path):
     """Take file path as string; return text as string.
@@ -66,7 +68,6 @@ def make_chains(text_string):
             new_list = [third_word]
             chains[word_tuple] = new_list
 
-    # chains[None] = None
     return chains
 
 
@@ -75,7 +76,6 @@ def make_text(chains):
 
     words = []
 
-    ###########
     tuple_key = list(chains.keys())[0]
     value0 = tuple_key[0]
     words.append(value0)
@@ -96,8 +96,9 @@ def make_text(chains):
         
     return " ".join(words)
 
+input_path = sys.argv[1]
 
-input_path = "green-eggs.txt"
+# input_path = "green-eggs.txt"
 
 # input_path = "gettysburg.txt"
 
