@@ -1,6 +1,6 @@
 """Generate Markov text from text files."""
 
-from random import choice
+from random import choice, sample
 
 import sys
 
@@ -167,61 +167,74 @@ def make_text(chains):
     return " ".join(words)
 
 
-# def make_text_ngrams(chains, n):
-#     """Return text from chains.
-#     https://docs.python.org/3/library/random.html
-#     """
+def make_text_ngrams(chains, n):
+    """Return text from chains.
+    https://docs.python.org/3/library/random.html
 
-#     words = []
+    chains is dictionary of (tuple) : [list...] key value pairs
+    n is the number of items in the tuple.
 
-#     tuple_key = list(chains.keys())[0]
+    random.sample https://docs.python.org/3/library/random.html
+    """
+
+    words = []
+
+    tuple_key = list(chains.keys())[0]
     
 
-#     value0 = tuple_key[0]
-#     if value0[0].isupper():
-#         words.append(value0)
+    value0 = tuple_key[0]
+    # if value0[0].isupper(): # Further Study feature 3
     
-#     while chains[tuple_key] != None:
+    words.append(value0)
+    
+    while chains[tuple_key] != None:
 
-#         value1 = tuple_key[1]
-#         words.append(value1)
+        value1 = tuple_key[1]
+        words.append(value1)
 
-#         value2 = choice(chains[tuple_key])
+        # value2 = choice(chains[tuple_key])
+        m = max(n - 1, len(chains[tuple_key]))
+        random_list = sample(chains[tuple_key], m)
 
-#         if value2 == None:
-#             break
+        print("N: ", n)
+        print("Random list: ", random_list)
+        print("Random list type: ", type(random_list))
 
-#         else:
-#             tuple_key = tuple([value1, value2])
+        if None in random_list:
+            break
+
+        else:
+            # tuple_key = tuple([value1, value2]) # New tuple
+            tuple_key = tuple(random_list)
 
         
-#     return " ".join(words)
+    return " ".join(words)
 
 
 
-# input_path = sys.argv[1]
 # input_path = "green-eggs.txt"
 # input_path = "gettysburg.txt"
 
 # Open the file and turn it into one long string
-# input_text = open_and_read_file(input_path)
-
-input_text1 = open_and_read_file(sys.argv[1])
-input_text2 = open_and_read_file(sys.argv[2])
+input_text = open_and_read_file(sys.argv[1])
+# input_text1 = open_and_read_file(sys.argv[1]) ##F4
+# input_text2 = open_and_read_file(sys.argv[2]) ##F4
 
 # Get a Markov chain
-# chains = make_chains(input_text)
-chains2 = make_chains2(input_text1, input_text2)
+chains = make_chains(input_text)
+# chains2 = make_chains2(input_text1, input_text2) ##F4
 
 # Produce random text
-# random_text = make_text(chains)
-random_text2 = make_text(chains2)
+random_text = make_text(chains)
+# random_text2 = make_text(chains2) ##F4
+
+random_text_n = make_text_ngrams(chains, 4)##F3
+# print(random_text2)
 
 # print(random_text)
-print(random_text2)
+# print(random_text2) ##F4
+print(random_text_n) ##F3
 
 
-# random_text2 = make_text_ngrams(chains, 2)
 
-# print(random_text2)
 
