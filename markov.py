@@ -96,7 +96,49 @@ def make_text(chains):
         
     return " ".join(words)
 
+
+def make_text_ngrams(chains, n):
+    """Return text from chains.
+    https://docs.python.org/3/library/random.html
+    """
+
+    words = []
+
+    tuple_key = list(chains.keys())[0]
+    value0 = tuple_key[0]
+    words.append(value0)
+    
+    while chains[tuple_key] != None:
+
+        value1 = tuple_key[1]
+        words.append(value1)
+
+        value2 = choice(chains[tuple_key])
+
+        if value2 == None:
+            break
+
+        else:
+            tuple_key = tuple([value1, value2])
+
+        
+    return " ".join(words)
+
+
+
+
+
+
+
+
+
+
 input_path = sys.argv[1]
+
+
+
+
+
 
 # input_path = "green-eggs.txt"
 
@@ -112,4 +154,9 @@ chains = make_chains(input_text)
 random_text = make_text(chains)
 
 print(random_text)
+
+
+# random_text2 = make_text_ngrams(chains, 2)
+
+# print(random_text2)
 
