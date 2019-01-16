@@ -49,6 +49,8 @@ def make_chains(text_string):
     # your code goes here
     words = text_string.split()
 
+    words.append(None)
+
     for index in range(len(words) - 2):
         word_tuple = tuple(words[index:index + 2])
 
@@ -64,7 +66,7 @@ def make_chains(text_string):
             new_list = [third_word]
             chains[word_tuple] = new_list
 
-    # print(chains)
+    # chains[None] = None
     return chains
 
 
@@ -73,25 +75,57 @@ def make_text(chains):
 
     words = []
 
-    # your code goes here
-    for key in chains:
-        word1 = key[0]
-        value1 = key[1]
-        values_list = chains[key]
-        value2 = choice(values_list)
-        
-        next_tuple = tuple([value1, value2])
-        # print(next_tuple)
+    ###########
+    tuple_key = list(chains.keys())[0]
+    
+    while chains[tuple_key] != None:
 
-        if next_tuple in chains:
+        while len(words) == 0:
 
-            random_item = choice(chains[next_tuple])
-            #print(next_tuple, random_item)
+            #tuple_key = list(chains.keys())[0]
+            value0 = tuple_key[0]
+            value1 = tuple_key[1]
 
-            words.append(word1)
+            words.append(value0)
             words.append(value1)
-            words.append(value2)
-            words.append(random_item)
+
+            value2 = choice(chains[tuple_key])
+
+        else:
+            words.append(value1)
+
+        if value2 == None:
+            break
+
+        else:
+            tuple_key = tuple([value1, value2])
+            # print(value1, value2)
+
+
+
+
+
+    ##############
+
+    # # your code goes here
+    # for key in chains:
+    #     word1 = key[0]
+    #     value1 = key[1]
+    #     values_list = 
+    #     value2 = choice(values_list)
+        
+    #     next_tuple = tuple([value1, value2])
+    #     # print(next_tuple)
+
+    #     if next_tuple in chains:
+
+    #         random_item = choice(chains[next_tuple])
+    #         #print(next_tuple, random_item)
+
+    #         words.append(word1)
+    #         words.append(value1)
+    #         words.append(value2)
+    #         words.append(random_item)
 
 
         
