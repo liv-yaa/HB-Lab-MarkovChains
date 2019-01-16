@@ -134,7 +134,7 @@ def make_chains2(text_string1, text_string2):
             new_list = [third_word]
             chains[word_tuple] = new_list
 
-    print("chains", chains)
+    #  print("chains", chains)
     return chains
 
 
@@ -142,7 +142,7 @@ def make_text(chains):
     """Return text from chains."""
 
     words = []
-    punctuation = "!.,?()"
+    # punctuation = "!.,?()"  # Punctuation checker feature
 
     tuple_key = list(chains.keys())[0]
     value0 = tuple_key[0]
