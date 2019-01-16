@@ -77,22 +77,15 @@ def make_text(chains):
 
     ###########
     tuple_key = list(chains.keys())[0]
+    value0 = tuple_key[0]
+    words.append(value0)
     
     while chains[tuple_key] != None:
 
-        while len(words) == 0:
+        value1 = tuple_key[1]
+        words.append(value1)
 
-            #tuple_key = list(chains.keys())[0]
-            value0 = tuple_key[0]
-            value1 = tuple_key[1]
-
-            words.append(value0)
-            words.append(value1)
-
-            value2 = choice(chains[tuple_key])
-
-        else:
-            words.append(value1)
+        value2 = choice(chains[tuple_key])
 
         if value2 == None:
             break
