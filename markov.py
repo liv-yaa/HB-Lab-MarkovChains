@@ -92,34 +92,6 @@ def make_text(chains):
 
         else:
             tuple_key = tuple([value1, value2])
-            # print(value1, value2)
-
-
-
-
-
-    ##############
-
-    # # your code goes here
-    # for key in chains:
-    #     word1 = key[0]
-    #     value1 = key[1]
-    #     values_list = 
-    #     value2 = choice(values_list)
-        
-    #     next_tuple = tuple([value1, value2])
-    #     # print(next_tuple)
-
-    #     if next_tuple in chains:
-
-    #         random_item = choice(chains[next_tuple])
-    #         #print(next_tuple, random_item)
-
-    #         words.append(word1)
-    #         words.append(value1)
-    #         words.append(value2)
-    #         words.append(random_item)
-
 
         
     return " ".join(words)
@@ -140,36 +112,3 @@ random_text = make_text(chains)
 
 print(random_text)
 
-
-
-
-
-# ## SHH
-# test_dict = {('a', 'fox?'): ['Would'],
-#  ('Sam', 'I'): ['am?'],
-#  ('could', 'you'): ['in', 'with', 'in', 'with'],
-#  ('you', 'with'): ['a', 'a'],
-#  ('box?', 'Would'): ['you'],
-#  ('ham?', 'Would'): ['you'],
-#  ('you', 'in'): ['a', 'a'],
-#  ('a', 'house?'): ['Would'],
-#  ('like', 'green'): ['eggs'],
-#  ('like', 'them,'): ['Sam'],
-#  ('and', 'ham?'): ['Would'],
-#  ('Would', 'you'): ['could', 'could', 'could', 'could', 'like', 'like'],
-#  ('you', 'could'): ['you', 'you', 'you', 'you'],
-#  ('a', 'mouse?'): ['Would'],
-#  ('them,', 'Sam'): ['I'],
-#  ('in', 'a'): ['house?', 'box?'],
-#  ('with', 'a'): ['mouse?', 'fox?'],
-#  ('house?', 'Would'): ['you'],
-#  ('a', 'box?'): ['Would'],
-#  ('green', 'eggs'): ['and'],
-#  ('you', 'like'): ['green', 'them,'],
-#  ('mouse?', 'Would'): ['you'],
-#  ('fox?', 'Would'): ['you'],
-#  ('eggs', 'and'): ['ham?']
-# }
-
-# print(len(test_dict))
-# print(len(chains))
