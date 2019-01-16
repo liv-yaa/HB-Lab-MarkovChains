@@ -105,8 +105,11 @@ def make_text_ngrams(chains, n):
     words = []
 
     tuple_key = list(chains.keys())[0]
+    
+
     value0 = tuple_key[0]
-    words.append(value0)
+    if value0[0].isupper():
+        words.append(value0)
     
     while chains[tuple_key] != None:
 
@@ -126,19 +129,7 @@ def make_text_ngrams(chains, n):
 
 
 
-
-
-
-
-
-
-
 input_path = sys.argv[1]
-
-
-
-
-
 
 # input_path = "green-eggs.txt"
 
